@@ -1,0 +1,135 @@
+/* --- Background Animation --- */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #232526, #414345);
+    background-size: 200% 200%;
+    animation: gradientBG 6s ease infinite;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* --- Glassmorphic Container --- */
+.container, .glass-container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Glowing Text Box --- */
+input[type="text"] {
+    width: 90%;
+    padding: 12px;
+    border-radius: 25px;
+    border: 2px solid transparent;
+    outline: none;
+    font-size: 18px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+/* --- Text Box Neon Glow on Focus --- */
+input[type="text"]:focus {
+    border-color: #ffcc00;
+    box-shadow: 0 0 15px #ffcc00;
+    transform: scale(1.05);
+}
+
+/* --- Glowing 3D Buttons --- */
+.glow-button {
+    position: relative;
+    overflow: hidden;
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff7eb3, #ff758c);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+    border: none;
+}
+
+/* --- Button Hover Effect --- */
+.glow-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Button Click Animation --- */
+.glow-button:active {
+    transform: scale(0.95);
+}
+
+/* --- Neon Border Pulse Effect --- */
+@keyframes neonPulse {
+    0% { box-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00; }
+    50% { box-shadow: 0 0 15px #ffcc00, 0 0 25px #ffcc00; }
+    100% { box-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00; }
+}
+
+.glow-button.pulsing {
+    animation: neonPulse 1.5s infinite alternate;
+}
+
+/* --- Ripple Effect on Click --- */
+.glow-button::before {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 10%, transparent 50%);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+.glow-button:active::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: 0s;
+}
+
+/* --- Floating Animation --- */
+@keyframes floating {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.floating {
+    animation: floating 3s infinite ease-in-out;
+}
+
+/* --- Hidden Elements --- */
+.hidden {
+    display: none;
+}
+
+/* --- Screen Shake --- */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.shake {
+    animation: shake 0.3s ease-in-out;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Wins?</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="battle-bg">
+    <div class="glass-container">
+        <h1>Hello, <span id="userName"></span>!</h1>
+
+        <!-- Video Preview -->
+        <video id="introVideo">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        <button id="playVideoButton">▶️ Play Video</button>
+        <p class="video-text">🎬 Watch first, then choose wisely!</p>
+
+        <!-- Buttons Show After Video -->
+        <div id="question" class="hidden">
+            <p class="question-text">Who won?</p>
+            <div class="button-container">
+                <button id="userButton">Your Name</button>
+                <button id="ahmadButton">Ahmad</button>
+            </div>
+        </div>
+
+        <!-- Laughing Cat and Sound -->
+        <img id="laughingCat" src="laughing-cat.jpg" alt="Laughing Cat" class="hidden">
+        <audio id="catSound" src="cat-laugh.mp3"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
